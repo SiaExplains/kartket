@@ -69,7 +69,5 @@ development.json
 logs
 node_modules/
 app-resources
-sites-posts/
-resources/
-servable/
+
 client/build/*
