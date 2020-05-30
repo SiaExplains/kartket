@@ -1,9 +1,0 @@
-.product {
-    flex: 1 1 160px;
-    margin: 10px;
-    display: flex;
-    padding: 50px;
-}
-.product img {
-    width: 100%;
-}
