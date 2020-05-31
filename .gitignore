@@ -64,8 +64,7 @@ typings/
 .env.development.local 
 .env.test.local 
 .env.production.local 
-production.json
-development.json
+
 logs
 node_modules/
 app-resources
