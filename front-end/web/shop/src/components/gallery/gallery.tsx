@@ -1,33 +1,53 @@
 import React, { Component } from 'react';
 import styles from './gallery.module.css';
 import Product from './product/product';
+import ProductService from '../../services/product.service';
+import ProductModel from '../../models/product';
 
-export default class Gallery extends Component {
+interface GalleryProps {}
+
+interface GalleryState {
+    data: ProductModel[];
+}
+
+export default class Gallery extends React.Component<
+    GalleryProps,
+    GalleryState
+> {
+    productService: ProductService = new ProductService();
+
+    //    state: GalleryState;
+
+    constructor(props: GalleryProps /*, _productService: ProductService*/) {
+        super(props);
+        //this.productService = _productService;
+        this.state = {
+            data: [],
+        };
+    }
+
+    componentDidMount() {
+        this.productService.fetchProducts(3000, false).then((product) => {
+            this.setState({ data: product });
+        });
+    }
+
     render() {
-        const data = [
-            { img: 'https://unsplash.it/250/200', title: 'ASUS 203X' },
-            { img: 'https://unsplash.it/250/200', title: 'iPhone S10' },
-            { img: 'https://unsplash.it/250/200', title: 'HTC 10' },
-            { img: 'https://unsplash.it/250/200', title: 'Google Pixel' },
-            { img: 'https://unsplash.it/250/200', title: 'Pot' },
-            { img: 'https://unsplash.it/250/200', title: 'Neckles' },
-            { img: 'https://unsplash.it/250/200', title: 'Toilet Paper' },
-            { img: 'https://unsplash.it/250/200', title: 'SAMSUNG TV' },
-            { img: 'https://unsplash.it/250/200', title: 'Lenovo Laptop' },
-            { img: 'https://unsplash.it/250/200', title: 'Refregrator' },
-            { img: 'https://unsplash.it/250/200', title: 'Keyboard Logitech' },
-        ];
         return (
             <div className={styles.gallery}>
-                {data.map((d) => {
-                    return (
-                        <Product
-                            className={styles.product}
-                            title={d.title}
-                            img={d.img}
-                        />
-                    );
-                })}
+                {this.state.data ? (
+                    this.state.data.map((d) => {
+                        return (
+                            <Product
+                                className={styles.product}
+                                title={d.title}
+                                img={d.img}
+                            />
+                        );
+                    })
+                ) : (
+                    <div>There is no prodcut added yet.</div>
+                )}
             </div>
         );
     }
