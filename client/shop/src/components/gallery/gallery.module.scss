@@ -1,0 +1,9 @@
+@import '../../theme/layout.scss';
+
+.gallery {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
