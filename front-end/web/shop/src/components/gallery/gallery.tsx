@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './gallery.module.css';
+import styles from './gallery.module.scss';
 import Product from './product/product';
 import ProductService from '../../services/product.service';
 import ProductModel from '../../models/product';
@@ -32,6 +32,11 @@ export default class Gallery extends React.Component<
         });
     }
 
+    /*
+
+    REACT LOADABLE >> react-loadable
+
+    */
     render() {
         return (
             <div className={styles.gallery}>
