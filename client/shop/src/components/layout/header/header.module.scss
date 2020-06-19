@@ -1,0 +1,57 @@
+@import '../../../theme/helper.scss';
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.branding {
+    align-items: center;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+    .title {
+        @include hideSm();
+    }
+}
+
+.searchbox {
+    @include hideSm();
+    position: 'relative';
+    border-radius: 4px;
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 015);
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.35);
+    }
+    margin-right: 4px;
+    margin-left: 0;
+    .searchIcon {
+        padding: 4px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+
+        flex: 1 0 300px;
+        justify-content: center;
+    }
+    .searchInput {
+        padding-left: 30px;
+        flex: 1;
+    }
+}
+
+.icons {
+    flex: 1 0 200px;
+    flex-direction: row-reverse;
+    max-width: 200px;
+}
+
+@media screen and (max-width: 600px) {
+    .icons {
+        max-width: 100%;
+    }
+}

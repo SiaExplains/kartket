@@ -24,28 +24,36 @@ export default class header extends Component {
     render() {
         return (
             <AppBar position='static'>
-                <Toolbar>
-                    <IconButton
-                        edge='start'
-                        color='inherit'
-                        aria-label='open drawer'
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant='h6' noWrap>
-                        Kartket
-                    </Typography>
-                    <div>
-                        <div>
+                <Toolbar className={classes.header}>
+                    <div className={classes.branding}>
+                        <IconButton
+                            edge='start'
+                            color='inherit'
+                            aria-label='open drawer'
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography
+                            className={classes.title}
+                            variant='h6'
+                            noWrap
+                        >
+                            Kartket
+                        </Typography>
+                    </div>
+
+                    <div className={classes.searchbox}>
+                        <div className={classes.searchIcon}>
                             <SearchIcon />
                         </div>
                         <InputBase
+                            className={classes.searchInput}
                             placeholder='Search…'
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <div />
-                    <div>
+
+                    <div className={classes.icons}>
                         <IconButton
                             aria-label='show 4 new mails'
                             color='inherit'
@@ -70,8 +78,6 @@ export default class header extends Component {
                         >
                             <AccountCircleIcon />
                         </IconButton>
-                    </div>
-                    <div>
                         <IconButton
                             aria-label='show more'
                             aria-haspopup='true'

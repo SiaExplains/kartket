@@ -25,10 +25,8 @@ class Product extends React.Component<Props, State> {
                 </div>
                 <div>
                     <p>
-                        The Tessier-Ashpool ice shattered, peeling away from the
-                        Chinese program’s thrust, a worrying impression of solid
-                        fluidity, as though the shards of a broken mirror bent
-                        and elongated as they rotated.
+                        TThis is a mock summary that dupplicated for each
+                        product...
                     </p>
                 </div>
             </Paper>
