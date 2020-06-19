@@ -43,11 +43,7 @@ export default class Gallery extends React.Component<
                 {this.state.data ? (
                     this.state.data.map((d) => {
                         return (
-                            <Product
-                                className={styles.product}
-                                title={d.title}
-                                img={d.img}
-                            />
+                            <Product className={styles.product} product={d} />
                         );
                     })
                 ) : (
