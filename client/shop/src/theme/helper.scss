@@ -29,3 +29,35 @@
         display: none;
     }
 }
+
+@mixin showXs() {
+    @media screen and (max-width: 300px) {
+        display: flex;
+    }
+}
+
+@mixin showSm() {
+    @media screen and (max-width: 680px) {
+        display: flex;
+    }
+}
+@mixin showMd() {
+    @media screen and (max-width: 960px) {
+        display: flex;
+    }
+}
+@mixin showLg() {
+    @media screen and (max-width: 1024px) {
+        display: flex;
+    }
+}
+@mixin showXl() {
+    @media screen and (max-width: 1200px) {
+        display: flex;
+    }
+}
+@mixin showXxl() {
+    @media screen and (max-width: 1400px) {
+        display: flex;
+    }
+}

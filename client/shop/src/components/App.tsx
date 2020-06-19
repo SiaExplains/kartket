@@ -7,18 +7,22 @@ import classes from './App.module.scss';
 import Footer from './layout/footer/footer';
 import Test from './test/test';
 import ProductDetail from './gallery/product-detail/product-detail';
+import NotFoundComponent from './not-found/not-found';
 
 function App() {
     return (
         <Router>
             <Header />
             <div className={classes.main}>
-                <Sidebar />
-                <Switch>
-                    <Route path='/' exact component={Gallery} />
-                    <Route path='/test' component={Test} />
-                    <Route path='/product/:id' component={ProductDetail} />
-                </Switch>
+                <Sidebar className={classes.sidebar} />
+                <div className={classes.content}>
+                    <Switch>
+                        <Route path='/' exact component={Gallery} />
+                        <Route path='/test' component={Test} />
+                        <Route path='/product/:id' component={ProductDetail} />
+                        <Route component={NotFoundComponent} />
+                    </Switch>
+                </div>
             </div>
             <Footer />
         </Router>
