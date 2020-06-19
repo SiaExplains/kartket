@@ -3,9 +3,9 @@ export default class ProductModel {
     img!: string;
     title!: string;
 
-    constructor(id: number, img: string, title: string) {
-        this.id = id;
-        this.img = img;
-        this.title = title;
+    constructor(_id: number, _img: string, _title: string) {
+        this.id = _id;
+        this.img = _img;
+        this.title = _title;
     }
 }

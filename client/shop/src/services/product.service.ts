@@ -3,7 +3,7 @@ import ProductModel from '../models/product';
 export default class ProductService {
     constructor() {}
 
-    mockData() {
+    private mockData() {
         return [
             new ProductModel(10, 'https://unsplash.it/250/200', 'ASUS 203X'),
             new ProductModel(20, 'https://unsplash.it/250/200', 'iPhone S10'),
@@ -27,7 +27,7 @@ export default class ProductService {
         ];
     }
 
-    fetchProducts(time: number, hasError: boolean): Promise<ProductModel[]> {
+    fetchAll(time: number, hasError: boolean): Promise<ProductModel[]> {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (hasError) {

@@ -7,21 +7,45 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
+import CategoryModel from '../../../../models/category';
+import CategoryService from '../../../../services/category.service';
 
-export default class categories extends Component {
+interface States {
+    categories: CategoryModel[];
+}
+
+interface Props {}
+export default class CategoryCompoenent extends Component<Props, States> {
+    categoryService: CategoryService = new CategoryService();
+    constructor(props: Props) {
+        super(props);
+
+        this.state = {
+            categories: [],
+        };
+    }
+
+    componentDidMount() {
+        this.categoryService.fetchAll().then((cat) => {
+            this.setState({
+                categories: cat,
+            });
+        });
+    }
+
     render() {
+        const { categories } = this.state;
+        let categoriesRender: any[] = [];
+
+        if (categories) {
+            categoriesRender = categories.map((cat) => {
+                return <MenuItem key={cat.id}>{cat.title}</MenuItem>;
+            });
+        }
         return (
             <div>
                 <Paper>
-                    <MenuList>
-                        <MenuItem>Laptops & Notebooks</MenuItem>
-                        <MenuItem>Smart Phones</MenuItem>
-                        <MenuItem>Accessories</MenuItem>
-                        <MenuItem>Fashion & Clothes</MenuItem>
-                        <MenuItem>Kitchen</MenuItem>
-                        <MenuItem>Health and Beauty</MenuItem>
-                        <MenuItem>Misc</MenuItem>
-                    </MenuList>
+                    <MenuList>{categoriesRender}</MenuList>
                 </Paper>
                 <div>
                     <Popper

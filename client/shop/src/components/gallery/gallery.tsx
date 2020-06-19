@@ -27,7 +27,7 @@ export default class Gallery extends React.Component<
     }
 
     componentDidMount() {
-        this.productService.fetchProducts(100, false).then((product) => {
+        this.productService.fetchAll(100, false).then((product) => {
             this.setState({ data: product });
         });
     }

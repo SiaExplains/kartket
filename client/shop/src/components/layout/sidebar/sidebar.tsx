@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './sidebar.module.scss';
-import Categories from './categories/categories';
+import CategoryCompoenent from './categories/categories';
 
 interface Props {
     className?: string;
@@ -16,7 +16,7 @@ class Sidebar extends Component<Props, State> {
         return (
             <div className={styles.sidebar}>
                 <h3>Categories</h3>
-                <Categories />
+                <CategoryCompoenent />
             </div>
         );
     }
