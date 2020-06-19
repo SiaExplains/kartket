@@ -1,0 +1,10 @@
+@import '../../../theme/helper.scss';
+
+.sidebar {
+    padding-top: 30px;
+    text-align: center;
+    display: flex;
+    flex: 1 0;
+    flex-direction: column;
+    @include hideSm();
+}

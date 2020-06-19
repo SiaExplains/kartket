@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './sidebar.module.css';
+import styles from './sidebar.module.scss';
 import Categories from './categories/categories';
 
 interface Props {

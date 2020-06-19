@@ -1,0 +1,31 @@
+@mixin hideXs() {
+    @media screen and (max-width: 300px) {
+        display: none;
+    }
+}
+
+@mixin hideSm() {
+    @media screen and (max-width: 680px) {
+        display: none;
+    }
+}
+@mixin hideMd() {
+    @media screen and (max-width: 960px) {
+        display: none;
+    }
+}
+@mixin hideLg() {
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
+}
+@mixin hideXl() {
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+}
+@mixin hideXxl() {
+    @media screen and (max-width: 1400px) {
+        display: none;
+    }
+}
