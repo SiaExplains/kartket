@@ -1,29 +1,36 @@
 import React, { FunctionComponent } from 'react';
 import ProductModel from '../../../models/product';
 import ProductService from '../../../services/product.service';
+import { RouteComponentProps } from 'react-router';
+import { match } from 'react-router-dom';
 
 interface Props {
-    product: ProductModel;
+    id: string;
 }
+
 interface States {
     product: any;
 }
 
-class ProductDetail extends React.Component<Props, States> {
+class ProductDetail extends React.Component<
+    RouteComponentProps<Props>,
+    States
+> {
     productService: ProductService = new ProductService();
-    constructor(props: Props) {
+    constructor(props: any) {
         super(props);
         this.state = {
             product: null,
         };
     }
-
     componentDidMount() {
-        this.productService.getById(20).then((prd) => {
-            this.setState({
-                product: prd,
+        this.productService
+            .getById(parseInt(this.props.match.params.id))
+            .then((prd) => {
+                this.setState({
+                    product: prd,
+                });
             });
-        });
     }
 
     render() {
