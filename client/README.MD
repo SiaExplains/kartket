@@ -1,4 +1,10 @@
 ### Front-End Sections
 
--   Web Application (Based on Reactjs, Typescript, Redux, etc.)
--   Mobile Application (Based on React Native)
+Fron-end side contains three application:
+
+-   Web Applications
+    -- Shop (`React`, `Redux`, `Typescript`)
+    -- Backoffice (`React`, `Redux`, `Javascript`)
+-   Mobile Application (`React Native`, `Redux`, `Javascript`)
+
+I used Micro-front-end architecture.
