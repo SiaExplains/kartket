@@ -11,7 +11,10 @@ const Footer: FunctionComponent<Props> = (props) => {
             <Link to='/test'>Test</Link>
             &nbsp;
             <Link to='/'>Home</Link>
-            <span>test</span>
+            &nbsp;
+            <Link to='/'>Contact</Link>
+            &nbsp;
+            <Link to='/'>About us</Link>
         </div>
     );
 };
