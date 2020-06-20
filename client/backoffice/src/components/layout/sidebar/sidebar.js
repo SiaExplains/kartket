@@ -7,6 +7,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,60 +56,18 @@ export default function Sidebar() {
         <div className={classes.root}>
             <Paper className={classes.paper}>
                 <MenuList>
-                    <MenuItem>Profile</MenuItem>
-                    <MenuItem>My account</MenuItem>
+                    <MenuItem>Categories</MenuItem>
+                    <MenuItem>Products</MenuItem>
+                    <MenuItem>Tags</MenuItem>
+                    <Divider />
+                    <MenuItem>Users</MenuItem>
+                    <MenuItem>Roles</MenuItem>
+                    <MenuItem>Resources</MenuItem>
+                    <MenuItem>Permission</MenuItem>
+                    <Divider />
                     <MenuItem>Logout</MenuItem>
                 </MenuList>
             </Paper>
-            <div>
-                <Button
-                    ref={anchorRef}
-                    aria-controls={open ? 'menu-list-grow' : undefined}
-                    aria-haspopup='true'
-                    onClick={handleToggle}
-                >
-                    Toggle Menu Grow
-                </Button>
-                <Popper
-                    open={open}
-                    anchorEl={anchorRef.current}
-                    role={undefined}
-                    transition
-                    disablePortal
-                >
-                    {({ TransitionProps, placement }) => (
-                        <Grow
-                            {...TransitionProps}
-                            style={{
-                                transformOrigin:
-                                    placement === 'bottom'
-                                        ? 'center top'
-                                        : 'center bottom',
-                            }}
-                        >
-                            <Paper>
-                                <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList
-                                        autoFocusItem={open}
-                                        id='menu-list-grow'
-                                        onKeyDown={handleListKeyDown}
-                                    >
-                                        <MenuItem onClick={handleClose}>
-                                            Profile
-                                        </MenuItem>
-                                        <MenuItem onClick={handleClose}>
-                                            My account
-                                        </MenuItem>
-                                        <MenuItem onClick={handleClose}>
-                                            Logout
-                                        </MenuItem>
-                                    </MenuList>
-                                </ClickAwayListener>
-                            </Paper>
-                        </Grow>
-                    )}
-                </Popper>
-            </div>
         </div>
     );
 }
