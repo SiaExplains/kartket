@@ -3,6 +3,7 @@ import ProductModel from '../../../models/product';
 import ProductService from '../../../services/product.service';
 import { RouteComponentProps } from 'react-router';
 import { match } from 'react-router-dom';
+import classes from './product-detail.module.scss';
 
 interface Props {
     id: string;

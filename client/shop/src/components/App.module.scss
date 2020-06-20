@@ -2,15 +2,14 @@
 
 .main {
     display: flex;
-}
+    .sidebar {
+        @include hideSm();
+        max-width: 300px;
+        flex: 1 0 300px;
+    }
 
-.sidebar {
-    @include hideSm();
-    max-width: 300px;
-    flex: 1 0 300px;
-}
-
-.content {
-    flex: 4 0 300px;
-    padding: 10px;
+    .content {
+        flex: 4 0 300px;
+        padding: 10px;
+    }
 }
