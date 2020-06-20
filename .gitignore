@@ -69,5 +69,5 @@ development.json
 logs
 node_modules/
 app-resources
-
+__todo.md
 client/build/*
