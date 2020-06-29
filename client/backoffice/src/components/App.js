@@ -1,11 +1,12 @@
 import React from 'react';
 import classes from './App.module.scss';
-import Header from './layout/header/header';
+import Header from './layout/header/header.component';
 import Footer from './layout/footer/footer';
-import Sidebar from './layout/sidebar/sidebar';
+import Sidebar from './layout/sidebar/sidebar.component';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Dashboard from './pages/dashboard/dashboard';
-import UserPageComponent from './pages/membership/users/users';
+import DashboardComponent from './pages/dashboard/dashboard.component';
+import UserPageComponent from './pages/membership/users/users.component';
+import CategoryCompoenent from './pages/product/category/category.component';
 
 function App() {
     return (
@@ -16,7 +17,15 @@ function App() {
                     <Sidebar className={classes.sidebar} />
                     <div className={classes.content}>
                         <Switch>
-                            <Route path='/' exact component={Dashboard} />
+                            <Route
+                                path='/'
+                                exact
+                                component={DashboardComponent}
+                            />
+                            <Route
+                                path='/category'
+                                component={CategoryCompoenent}
+                            />
                             <Route
                                 path='/membership/users'
                                 component={UserPageComponent}

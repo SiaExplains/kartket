@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -56,11 +57,18 @@ export default function Sidebar() {
         <div className={classes.root}>
             <Paper className={classes.paper}>
                 <MenuList>
-                    <MenuItem>Categories</MenuItem>
+                    <MenuItem>
+                        <Link to='/'>Dashboard</Link>
+                    </MenuItem>
+                    <MenuItem>
+                        <Link to='/category'>Categories</Link>
+                    </MenuItem>
                     <MenuItem>Products</MenuItem>
                     <MenuItem>Tags</MenuItem>
                     <Divider />
-                    <MenuItem>Users</MenuItem>
+                    <MenuItem>
+                        <Link to='/user'>Users</Link>
+                    </MenuItem>
                     <MenuItem>Roles</MenuItem>
                     <MenuItem>Resources</MenuItem>
                     <MenuItem>Permission</MenuItem>
