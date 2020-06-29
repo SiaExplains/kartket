@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import DashboardComponent from './pages/dashboard/dashboard.component';
 import UserPageComponent from './pages/membership/users/users.component';
 import CategoryCompoenent from './pages/product/category/category.component';
+import TagComponent from './pages/product/tags/tags.component';
 
 function App() {
     return (
@@ -26,6 +27,8 @@ function App() {
                                 path='/category'
                                 component={CategoryCompoenent}
                             />
+                            <Route path='/tag' component={TagComponent} />
+
                             <Route
                                 path='/membership/users'
                                 component={UserPageComponent}

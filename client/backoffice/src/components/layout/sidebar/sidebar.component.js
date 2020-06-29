@@ -64,7 +64,9 @@ export default function Sidebar() {
                         <Link to='/category'>Categories</Link>
                     </MenuItem>
                     <MenuItem>Products</MenuItem>
-                    <MenuItem>Tags</MenuItem>
+                    <MenuItem>
+                        <Link to='/tag'>Tags</Link>
+                    </MenuItem>
                     <Divider />
                     <MenuItem>
                         <Link to='/user'>Users</Link>
