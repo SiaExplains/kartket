@@ -5,7 +5,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 
 const name = 'Kartket Backoffice';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'Kartket Backoffice by Nextjs';
 
 export default function Layout({
     children,
@@ -61,6 +61,9 @@ export default function Layout({
                         </h2>
                     </>
                 )}
+                <Link href='/ali'>
+                    <a>Ali</a>
+                </Link>
             </header>
             <main>{children}</main>
             {!home && (
