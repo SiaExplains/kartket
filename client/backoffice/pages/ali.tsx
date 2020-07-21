@@ -1,4 +1,7 @@
 import Layout from '../components/layout/layout';
+import { useQuery } from '@apollo/react-hooks';
+import { NetworkStatus } from 'apollo-client';
+import gql from 'graphql-tag';
 
 const AliPage: Function = () => {
     return (

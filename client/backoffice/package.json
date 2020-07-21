@@ -8,8 +8,15 @@
         "start": "next start"
     },
     "dependencies": {
+        "@apollo/react-hooks": "^4.0.0",
+        "@apollo/react-ssr": "^4.0.0",
+        "apollo-boost": "^0.4.9",
+        "apollo-link-context": "^1.0.20",
+        "apollo-link-http": "^1.5.17",
+        "apollo-server-core": "^2.16.0",
         "date-fns": "^2.11.1",
         "gray-matter": "^4.0.2",
+        "isomorphic-fetch": "^2.2.1",
         "next": "9.3.5",
         "react": "16.13.1",
         "react-dom": "16.13.1",
