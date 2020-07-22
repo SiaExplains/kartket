@@ -53,7 +53,7 @@ export default function withApollo(
     }: InitialProps) => {
         const client = apolloClient || initApolloClient(apolloState);
         return (
-            <ApolloProvider client={client}>
+            <ApolloProvider>
                 <PageComponent {...pageProps} />
             </ApolloProvider>
         );
